@@ -40,11 +40,13 @@ dependencies:
   http: ^1.2.2
   equatable: ^2.0.5
   get: ^4.6.6
-
+  flutter_svg: any
+  video_player: ^2.9.5
+  carousel_slider: ^5.0.0
 
 flutter_icons:
   android: true
-  image_path: "assets/images/icon.png"
+  image_path: "assets/images/IMG_20250407_205234.png"
 
   cupertino_icons: ^1.0.6
 

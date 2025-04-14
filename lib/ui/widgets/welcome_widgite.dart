@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:project_stud/core/helper/respnsive.dart';
 
 
 class WelcomeWidget extends StatelessWidget {
@@ -22,11 +24,11 @@ class WelcomeWidget extends StatelessWidget {
           Text(
             'Hello, $text',
           ),
-          const SizedBox(
-            width: 188,
+           SizedBox(
+            width: 188.w,
           ),
-          Image.asset('assets/images/icons/notefication.png',
-              width: 24, height: 24)
+          SvgPicture.asset('assets/images/icons/notification.svg',
+              width: 24.w, height: 24.h)
         ],
       ),
     );

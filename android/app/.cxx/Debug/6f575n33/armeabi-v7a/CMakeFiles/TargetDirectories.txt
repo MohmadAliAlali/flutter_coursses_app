@@ -1,0 +1,2 @@
+/home/juba/Desktop/project_stud/android/app/.cxx/Debug/6f575n33/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/juba/Desktop/project_stud/android/app/.cxx/Debug/6f575n33/armeabi-v7a/CMakeFiles/rebuild_cache.dir

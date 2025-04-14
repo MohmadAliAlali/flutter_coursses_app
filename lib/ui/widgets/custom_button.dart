@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_stud/core/global_color.dart';
+import 'package:project_stud/core/constants/global_color.dart';
+import 'package:project_stud/core/helper/respnsive.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -14,22 +15,24 @@ class CustomButton extends StatelessWidget {
     required this.child,
     this.width = 329,
     this.height = 50,
-    this.color = GlobalColor.greenColor,
+    this.color = GlobalColor.green,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: color,
-        minimumSize: Size(width, height),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+    return
+    GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        height: height.h,
+        width: width.w,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(8.r)
         ),
+        child: child,
       ),
-      child: child,
     );
   }
 }

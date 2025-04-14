@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:project_stud/core/global_color.dart';
-import 'package:project_stud/core/global_text_style.dart';
-import 'package:project_stud/core/navigation.dart';
-import 'package:project_stud/core/respnsive.dart';
-import 'package:project_stud/core/state_manager.dart';
-import 'package:project_stud/ui/screens/auth_screens/login_screen/login_screen.dart';
+import 'package:get/get.dart';
+import 'package:project_stud/core/constants/global_text.dart';
+import 'package:project_stud/core/constants/global_text_style.dart';
+import 'package:project_stud/core/helper/respnsive.dart';
+import 'package:project_stud/core/helper/state_manager.dart';
 import 'package:project_stud/ui/widgets/custom_button.dart';
 import 'package:project_stud/ui/widgets/custom_click_text.dart';
 
@@ -19,24 +18,21 @@ class IntroScreensState extends State<IntroScreens> {
   int currentIndex = 0;
   late PageController _pageController;
 
-  final List<Map<String, String>> screens = [
+  final List<Map<String, dynamic>> screens = [
     {
       'image': 'assets/images/first_photo.png',
-      'title': 'Lorem ipsum dolor sit amet ',
-      'description':
-          'Lorem ipsum dolor sit amet consectetur. Accumsan scelerisque viverra congue mattis purus. Sed urna aliquet pulvinar mauris donec ',
+      'title': GlobalText.welcomeTitle,
+      'description': GlobalText.welcomeDescription
     },
     {
       'image': 'assets/images/second_photo.png',
-      'title': 'Lorem ipsum dolor sit amet ',
-      'description':
-          'Lorem ipsum dolor sit amet consectetur. Accumsan scelerisque viverra congue mattis purus. Sed urna aliquet pulvinar mauris donec n',
+      'title': GlobalText.welcomeTitle,
+      'description': GlobalText.welcomeDescription
     },
     {
       'image': 'assets/images/theerd_photo.png',
-      'title': 'Lorem ipsum dolor sit amet ',
-      'description':
-          'Lorem ipsum dolor sit amet consectetur. Accumsan scelerisque viverra congue mattis purus. Sed urna aliquet pulvinar mauris donec ',
+      'title': GlobalText.welcomeTitle,
+      'description': GlobalText.welcomeDescription
     },
   ];
 
@@ -60,7 +56,7 @@ class IntroScreensState extends State<IntroScreens> {
         curve: Curves.easeInOut,
       );
     } else {
-      Navigation.navigateAndRemove(context,  LoginScreen());
+      Get.offNamed('register');
       AppState.firstUse();
     }
   }
@@ -82,12 +78,12 @@ class IntroScreensState extends State<IntroScreens> {
                   padding:  EdgeInsets.only(right: 27.w),
                   alignment: Alignment.centerRight,
                   child: CustomClickText(
-                    text: 'Skip',
+                    text: GlobalText.welcomeSKIP,
                     onPressed: () {
-                      Navigation.navigateAndRemove(context,  LoginScreen());
+                      Get.offNamed('register');
                       AppState.firstUse();
                     },
-                    color: GlobalColor.textColor,
+                    style: GlobalTextStyle.text16Black400,
                   ),
                 ),
               ),
@@ -111,16 +107,10 @@ class IntroScreensState extends State<IntroScreens> {
                             width: 326.w,
                           ),
                           SizedBox(height: 39.h),
-                          Text(
-                            screens[index]['title']!,
-                            style: GlobalTextStyle.subheading,
-                          ),
+                          screens[index]['title']!,
+
                           SizedBox(height: 16.h ),
-                          Text(
-                            screens[index]['description']!,
-                            style: GlobalTextStyle.body,
-                            textAlign: TextAlign.center,
-                          ),
+                          screens[index]['description']!,
                         ],
                       ),
                     );
@@ -131,15 +121,15 @@ class IntroScreensState extends State<IntroScreens> {
                 onPressed: _goToNextPage,
                 child: Text(
                   currentIndex == screens.length - 1 ? 'FINISH' : 'NEXT',
-                  style: GlobalTextStyle.btnText,
+                  style: GlobalTextStyle.text14blueLight400,
                 ),
               ),
               SizedBox(height: 106.h),
             ],
           ),
           Positioned(
-            bottom: 352.h,
-            left: MediaQuery.of(context).size.width / 2 - (screens.length * 20 / 2),
+            bottom: 380.h,
+            left: 150.w,
             child: Row(
               children: List.generate(
                 screens.length,

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project_stud/core/global_color.dart';
-import 'package:project_stud/core/navigation.dart';
-import 'package:project_stud/core/respnsive.dart';
-import 'package:project_stud/core/state_manager.dart';
-import 'package:project_stud/ui/screens/auth_screens/login_screen/login_screen.dart';
-import 'package:project_stud/ui/screens/bottom_navbar.dart';
+import 'package:get/get.dart';
+import 'package:project_stud/core/constants/global_color.dart';
+import 'package:project_stud/core/helper/respnsive.dart';
+import 'package:project_stud/core/helper/state_manager.dart';
 import 'dart:async';
 
-import 'package:project_stud/ui/screens/intro_screen.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -28,11 +25,14 @@ class _SplashScreenState extends State<SplashScreen> {
     AppState.init();
     Timer(const Duration(seconds: 4), () {
       if (AppState.isNotFirstUse) {
-      Navigation.navigateAndRemove(context,const  IntroScreens());
-      } else if(AppState.isLoggedIn) {
-        Navigation.navigateAndRemove(context,const  BottomNavBarDemo());
+      Get.offNamed('intro');
+        // Get.offNamed('home');
+      } else if(!AppState.isLoggedIn) {
+        Get.offNamed('navPage');
+        // Get.offNamed('home');
       }else{
-        Navigation.navigateAndRemove(context,  LoginScreen());
+        Get.offNamed('register');
+        // Get.offNamed('home');
       }
     });
   }
@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
     return Scaffold(
-      backgroundColor: GlobalColor.waiteGreenColor,
+      backgroundColor: GlobalColor.blueLight1,
           body: Center(
             child: Image.asset(
               'assets/images/logo.png',

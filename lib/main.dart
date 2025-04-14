@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_stud/ui/screens/splash_screen.dart';
+import 'package:project_stud/core/helper/respnsive.dart';
+import 'package:project_stud/routes/app_routes.dart';
 
 
 void main() {
@@ -12,14 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const SplashScreen(),
+      initialRoute: AppRouts.splash,
+      getPages: AppRouts.routes,
+      // home: VideoPlayerScreen(),
     );
   }
 }

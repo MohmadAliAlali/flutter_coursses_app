@@ -1,0 +1,1 @@
+/home/juba/Desktop/project_stud/build/app/intermediates/cxx/Debug/6f575n33/obj/arm64-v8a
