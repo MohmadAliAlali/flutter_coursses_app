@@ -1,16 +1,40 @@
-# project_stud
+# Flutter Courses App
 
-A new Flutter project.
+## Overview
+Flutter Courses App is an educational application designed to help students access courses and study materials easily. The app provides a user-friendly interface to browse courses, subjects, videos, and manage user profiles.
 
-## Getting Started
+## Main Features
+- Browse courses and subjects
+- Watch educational videos
+- Edit and manage user profile
+- User authentication (login/register)
+- Help center and privacy policy
 
-This project is a starting point for a Flutter application.
+## Technologies Used
+- **Flutter**: For building cross-platform user interfaces (Android, iOS, Web, Linux)
+- **Dart**: Main programming language
+- **GetX**: State management and navigation
+- **REST API**: For server communication and data fetching
+- **Responsive Design**: Supports all screen sizes
 
-A few resources to get you started if this is your first Flutter project:
+## Project Structure
+- `lib/`: Main application code
+  - `controllers/`: Business logic
+  - `model/`: Data models
+  - `services/`: API and server communication
+  - `ui/`: Screens and widgets
+  - `core/`: Constants and helpers
+- `assets/`: Images and icons
+- `test/`: Application tests
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## How to Run
+1. Install [Flutter](https://flutter.dev/docs/get-started/install)
+2. Run the following commands:
+   ```bash
+   flutter pub get
+   flutter run
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contribution
+To contribute, please open pull requests or report issues on the repository page.
+
